@@ -15,8 +15,8 @@ describe('ExternalGatewayController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(externalGatewayController.getHello()).toBe('Hello World!');
+    it('should return "ExternalGatewayService says: Hello World!"', () => {
+      expect(externalGatewayController.getHello()).toBe('ExternalGatewayService says: Hello World!');
     });
   });
 });
