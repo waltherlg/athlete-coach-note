@@ -1,8 +1,32 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src",
+  "sourceRoot": "apps/athlete-coach-note/src",
   "compilerOptions": {
-    "deleteOutDir": true
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/athlete-coach-note/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/athlete-coach-note",
+  "projects": {
+    "athlete-coach-note": {
+      "type": "application",
+      "root": "apps/athlete-coach-note",
+      "entryFile": "main",
+      "sourceRoot": "apps/athlete-coach-note/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/athlete-coach-note/tsconfig.app.json"
+      }
+    },
+    "external-gateway": {
+      "type": "application",
+      "root": "apps/external-gateway",
+      "entryFile": "main",
+      "sourceRoot": "apps/external-gateway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/external-gateway/tsconfig.app.json"
+      }
+    }
   }
 }
